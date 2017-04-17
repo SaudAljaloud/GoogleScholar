@@ -1,7 +1,7 @@
 [
 	{
-		"caption": "Example: hello World",
-		"command": "example"
+		"caption": "GoogleScholar: Search",
+		"command": "google_scholar"
 	},
 	
 ]
