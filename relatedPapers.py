@@ -12,9 +12,28 @@ from http.cookiejar import MozillaCookieJar
 import codecs
 import re
 
+from selenium import webdriver
+
+
+class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
+
+	def run(self, edit):
+		self.window = self.view.window()
+		prompt = self.window.show_input_panel("Scholar Search:", "", self.on_query, None, None)
+	def on_query(self, q):
+		if len(q) > 3:
+			GoogleScholar = GoogleScholarCommand(sublime_plugin.TextCommand)
+			print("Searching term: " + q)
+			GoogleScholarCommand.searchGoogleTerm(GoogleScholar,q)
+			GoogleScholarCommand.showtitles(GoogleScholar)
+		else:
+			sublime.status_message('DBLP query is too short!')
+
+
 class GoogleScholarCommand(sublime_plugin.TextCommand):
-	
-	
+
+
+	# bsbm
 	def run(self, edit):
 		for selection in self.view.sel():
 			# if the user didn't select anything, search the currently highlighted word
@@ -24,17 +43,17 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 			else:
 				region = selection
 			text = self.view.substr(region)
-		self.list_title = []
-		self.list_url = []
-		self.list_citeByUrl = []
-		self.list_relatedArticlesUrl = []
-		print("Searching: " + text)
-		user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:35.0) Gecko/20100101 Firefox/35.0'
-		opener = urllib.request.build_opener()
+
+
+		
 		
 		self.searchGoogleTerm(text)
 		self.showtitles()
 
+	
+		
+
+	# regex speed
 	def showtitles(self):
 		if self.list_title:
 			self.view.window().show_quick_panel(self.list_title,self._on_select)
@@ -45,7 +64,9 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 	def _on_select(self, idx):
 		if idx > -1:
 			self.selectedArticle = idx
-			self.menuList = ["Open URL", "Go to Citation", "Go to related articles", "Other versions"]
+			selected_url = self.list_url[self.selectedArticle]
+			subTitle =  self.list_subtitle[self.selectedArticle]
+			self.menuList = ["Open URL: " + selected_url, "Sub-title: " +  subTitle, "Go to Citation", "Go to related articles", "Other versions", "Back"]
 			self.view.window().show_quick_panel(self.menuList,self._on_select_menue)
 
 
@@ -55,124 +76,167 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 				selected_url = self.list_url[self.selectedArticle]
 				webbrowser.open_new(selected_url)
 			elif (idx == 1):
+				self.showtitles()
+			elif (idx == 2):
 				citation_url = self.list_citeByUrl[self.selectedArticle]
 				self.list_title = []
 				self.list_url = []
 				self.list_citeByUrl = []
 				self.list_relatedArticlesUrl = []
+				self.list_subtitle = []
+				self.list_versionURL = []
 
 				self.searchGoogle("https://scholar.google.com" + citation_url)
 				self.showtitles()
-			elif (idx == 2):
+			elif (idx == 3):
 				relatedArticles_url = self.list_relatedArticlesUrl[self.selectedArticle]
 				self.list_title = []
 				self.list_url = []
 				self.list_citeByUrl = []
 				self.list_relatedArticlesUrl = []
+				self.list_subtitle = []
+				self.list_versionURL = []
 
 				self.searchGoogle("https://scholar.google.com" + relatedArticles_url)
 				self.showtitles()
 
+			elif (idx == 4):
+				versions_url = self.list_versionURL[self.selectedArticle]
+				self.list_title = []
+				self.list_url = []
+				self.list_citeByUrl = []
+				self.list_relatedArticlesUrl = []
+				self.list_subtitle = []
+				self.list_versionURL = []
+
+				self.searchGoogle("https://scholar.google.com" + versions_url)
+				self.showtitles()
 
 
 
+			elif (idx == 5):
+				self.showtitles()
 
+	# def _on_select_details2(self, idx3):
+	# 	if idx3 > -1:
+	# 		if (idx3 == 0):
+	# 			selected_url = self.list_url[self.selectedArticle]
+	# 			webbrowser.open_new(selected_url)
+	# 		else:
+	# 			self.showtitles()
+
+
+	# def _on_select_details(self, idx2):
+	# 	if idx2 > -1:
+	# 		titleDetail = self.list_subtitle[idx2]
+	# 		self.view.window().show_quick_panel([titleDetail,"back"],self._on_select_details2)
+
+	
 	# sparql regex
 
 
 	
+	
 	def searchGoogleTerm(self, search_term):
+		self.list_title = []
+		self.list_url = []
+		self.list_citeByUrl = []
+		self.list_relatedArticlesUrl = []
+		self.list_subtitle = []
+		self.list_versionURL = []
+		print("Searching: " + search_term)
 		query_params = { 'q' : search_term}
-		url = "https://scholar.google.com/scholar?hl=en&btnG=&as_sdt=1%2C5&as_sdtp=" + urllib.parse.urlencode(query_params)
+		url = "http://scholar.google.co.uk/scholar?hl=en&" + urllib.parse.urlencode(query_params) + "&btnG=&as_sdt=1%2C5&as_sdtp="
 		self.searchGoogle(url)
 
 	
 	def searchGoogle(self, url):
-		fn = os.path.join(os.path.dirname(__file__), 'ScholarExample.html')
-		html = codecs.open(fn, 'r', 'utf-8').read()
-		# html = self.getHtml(url)
+		# fn = os.path.join(os.path.dirname(__file__), 'ScholarExample.html')
+		# html = codecs.open(fn, 'r', 'utf-8').read()
+		html = self.getHtmlSelPhantomJS(url)
 		soup = BeautifulSoup(html, "html.parser")
 		div_results = soup.find_all("div", {"class": "gs_ri"})
 		if div_results:
 			print("div_results: " + str(len(div_results)))
 			for articlesDiv in div_results:
 				try:
-					list_title = articlesDiv.find("h3", {"class" : "gs_rt"}).text.replace("[PDF][PDF]","[PDF]")
-					list_url = articlesDiv.find("h3", {"class" : "gs_rt"}).find('a')['href']
-					list_citeByUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].get('href')
-					list_citeByNo = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].text
-					list_relatedArticlesUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[1].get('href')
-					# print("list_title: " + list_title)
-					# print("list_url: " + list_url)
-					# print("list_citeByUrl: " + list_citeByUrl)
-					# print("list_relatedArticlesUrl: " + list_relatedArticlesUrl)
-					self.list_title.append("Cited " + re.findall('\d+', list_citeByNo)[0] + ": " + list_title)
-					self.list_url.append(list_url)
-					self.list_citeByUrl.append(list_citeByUrl)
-					self.list_relatedArticlesUrl.append(list_relatedArticlesUrl)
+					list_title = articlesDiv.find("h3", {"class" : "gs_rt"}).text.replace("[PDF][PDF]","[PDF]").replace("[HTML][HTML]","[HTML]")
+					try:
+						list_citeByNo = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].text or ["Cited by 0"]
+						extractedNumberOfCitation = re.findall('\d+', list_citeByNo)[0] or "0"
+					except:
+						extractedNumberOfCitation = "0"
+					
+					
+					self.list_title.append("Cited " + extractedNumberOfCitation + ": " + list_title)
+					
+					try:
+						list_url = articlesDiv.find("h3", {"class" : "gs_rt"}).find('a')['href']
+						self.list_url.append(list_url)
+					except:
+						self.list_url.append("#")
+					
+					try:
+						list_citeByUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].get('href')
+						self.list_citeByUrl.append(list_citeByUrl)
+					except:
+						self.list_citeByUrl.append("#")
+					
+					try:
+						list_relatedArticlesUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[1].get('href')
+						self.list_relatedArticlesUrl.append(list_relatedArticlesUrl)
+					except:
+						self.list_relatedArticlesUrl.append("#")
+
+					try:
+						list_versionURL = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[2].get('href')
+						self.list_versionURL.append(list_versionURL)
+					except:
+						self.list_versionURL.append("#")
+					
+					try:
+						list_subtitle = articlesDiv.find("div", {"class" : "gs_a"}).text
+						self.list_subtitle.append(list_subtitle)
+					except:
+						self.list_subtitle.append("#")
+
+
 				except:
 					pass
 
 
 
+
+	def getHtmlSelPhantomJS(self, url):
+	    browser = webdriver.PhantomJS("/usr/local/bin/phantomjs")
+	    browser.get(url)
+	    html_source = browser.page_source
+	    return html_source
+
+	def getHtmlSelFireFox(self, url):
+	    browser = webdriver.Firefox()
+	    browser.get(url)
+	    html_source = browser.page_source
+	    return html_source
+
 	def getHtml(self, url):
 		
-		self.cjar = MozillaCookieJar()
-		self.cjar.load("/Users/user/cookies2.txt",ignore_discard=True)
+		# self.cjar = MozillaCookieJar()
+		# self.cjar.load("/Users/user/cookies2.txt",ignore_discard=True)
+		# opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cjar))
 		opener = urllib.request.build_opener()
-		request = urllib.request.Request(url=url, headers = { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36','Cookie': 'A=sF7U3w:CPTS=1492377836:LM=1492377836:S=60zFToJTBBSlpG5T' })
+		request = urllib.request.Request(url=url, headers = { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:35.0) Gecko/20100101 Firefox/35.0',
+			'Cookie': 'NID=101=Bx9RtLbzsODzLTmDx_iL3WbQobRDGhr794GALapN59pqMSYH0DRVDYHQFH-G6QbGmc3iv2XVqzE6yLfjOu8rck0WTn0Mopf2XTjrxAxhkPe-oc7BUqj69Kjn',
+			'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+			'Accept-Language':'en-US,en;q=0.5',
+			'Accept-Encoding':'gzip, deflate',
+			'Referer': 'http://scholar.google.co.uk/',
+			'oc7BUqj69KjnlCrsRxDA': 'CONSENT=WP.25f45a; GSP=LM=1492432025:S=JUdcJaFb9V3PdCZ7' })
 		handler = opener.open(request)
 		html = handler.read()
 		return html
 
-	def printTitles(self,url,user_agent, opener):
 
-		request = urllib.request.Request(url="https://scholar.google.com" + url, headers={'User-Agent': 'Mozilla/5.0'})
-		handler = opener.open(request)
-		htmlPage = handler.read()
-		soup = BeautifulSoup(htmlPage, 'html.parser')
-		div_results = soup.find_all("div", {"class": "gs_ri"})
-		titleList = []
-		if div_results != None:
-			for articlesDiv in div_results:
-				try:
-					title = articlesDiv.find("h3", {"class" : "gs_rt"}).find('a').text
-					url = articlesDiv.find("h3", {"class" : "gs_rt"}).find('a')['href']
-					print(title)
-					titleList.append(title)
-					self.list_url.append(url)
-				except:
-					pass
-		return titleList
-
-
-	
-	def search(self,search_term, user_agent, opener):
-
-		query_params = { 'q' : search_term}
-		url = "https://scholar.google.com/scholar?as_vis=1&hl=en&as_sdt=1,5&" + urllib.parse.urlencode(query_params)
-		opener = urllib.request.build_opener()
-		request = urllib.request.Request(url=url, headers={'User-Agent': 'Mozilla/5.0'})
-		handler = opener.open(request)
-		html = handler.read()
-
-
-		# berlin sparql benchmark
-		# Create soup for parsing HTML and extracting the relevant information
-		soup = BeautifulSoup(html, "html.parser")
-		print("Title: " + str(soup.title))
-		div_results = soup.find_all("div", {"class": "gs_ri"})
-		print("div_results size: " + str(len(div_results)))
-		titleList = []
-		if div_results:
-			print("First Div: " + str(div_results[0]))
-			firstArticle = div_results[0].find("div", {"class" : "gs_fl"})
-			firstArticleRelatedUrl = firstArticle.find_all('a')[1].get('href')
-			print("Related article path: " + str(firstArticleRelatedUrl))
-			titleList = self.printTitles(firstArticleRelatedUrl, user_agent, opener)
-		else:
-			print("Empty!!")
-		return titleList
 
 
 

@@ -1,7 +1,12 @@
 [
 	{
-		"caption": "GoogleScholar: Search",
-		"command": "google_scholar"
+
+		"caption":"saud: Insert your term",
+		"command":"insert_google_scholar",
 	},
+	{
+		"caption": "saud: Search Highlighted",
+		"command": "google_scholar"
+	}
 	
 ]

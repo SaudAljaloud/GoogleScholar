@@ -1,0 +1,8 @@
+PWD /Users/user/Library/Application Support/Sublime Text 3/Packages/RelatedPapers
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/user/Library/Application Support/Sublime Text 3/Packages/RelatedPapers/relatedPapers.py
+OUTPUT /Users/user/Library/Application Support/Sublime Text 3/Packages/RelatedPapers/relatedPapers.log
+OUTPUT /Users/user/Library/Application Support/Sublime Text 3/Packages/RelatedPapers/relatedPapers.pdf
+INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
