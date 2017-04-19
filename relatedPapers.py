@@ -24,8 +24,9 @@ class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
 		if len(q) > 3:
 			GoogleScholar = GoogleScholarCommand(sublime_plugin.TextCommand)
 			print("Searching term: " + q)
-			GoogleScholarCommand.searchGoogleTerm(GoogleScholar,q)
-			GoogleScholarCommand.showtitles(GoogleScholar)
+			sublime.message_dialog("Searchihng: " + q)
+			# GoogleScholarCommand.searchGoogleTerm(GoogleScholar,q)
+			# GoogleScholarCommand.showtitles(GoogleScholar)
 		else:
 			sublime.status_message('DBLP query is too short!')
 
