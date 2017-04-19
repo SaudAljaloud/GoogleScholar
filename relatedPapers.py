@@ -15,49 +15,18 @@ import re
 from selenium import webdriver
 
 
-class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
 
-	def run(self, edit):
-		self.window = self.view.window()
-		prompt = self.window.show_input_panel("Scholar Search:", "", self.on_query, None, None)
-	def on_query(self, q):
-		if len(q) > 3:
-			GoogleScholar = GoogleScholarCommand(sublime_plugin.TextCommand)
-			print("Searching term: " + q)
-			sublime.message_dialog("Searchihng: " + q)
-			# GoogleScholarCommand.searchGoogleTerm(GoogleScholar,q)
-			# GoogleScholarCommand.showtitles(GoogleScholar)
-		else:
-			sublime.status_message('DBLP query is too short!')
-
-
-class GoogleScholarCommand(sublime_plugin.TextCommand):
-
-
-	# bsbm
-	def run(self, edit):
-		for selection in self.view.sel():
-			# if the user didn't select anything, search the currently highlighted word
-			region = None
-			if selection.empty():
-				region = self.view.word(selection)
-			else:
-				region = selection
-			text = self.view.substr(region)
-
-
-		
-		
-		self.searchGoogleTerm(text)
+# sparql regex
+class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
+	def run(self,edit,entry):
+		self.searchGoogleTerm(entry)
 		self.showtitles()
 
-	
-		
 
-	# regex speed
 	def showtitles(self):
 		if self.list_title:
-			self.view.window().show_quick_panel(self.list_title,self._on_select)
+			window = sublime.active_window()
+			window.show_quick_panel(self.list_title,self._on_select,sublime.KEEP_OPEN_ON_FOCUS_LOST)
 		else:
 			sublime.message_dialog("No result!")
 
@@ -67,9 +36,17 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 			self.selectedArticle = idx
 			selected_url = self.list_url[self.selectedArticle]
 			subTitle =  self.list_subtitle[self.selectedArticle]
-			self.menuList = ["Open URL: " + selected_url, "Sub-title: " +  subTitle, "Go to Citation", "Go to related articles", "Other versions", "Back"]
-			self.view.window().show_quick_panel(self.menuList,self._on_select_menue)
+			self.menuList = ["Open URL: " + selected_url, "Sub-title: " +  subTitle, "Go to Citation", "Go to related articles", "Other versions", "Look up with DBLP", "Back"]
+			window = sublime.active_window()
+			window.show_quick_panel(self.menuList,self._on_select_menue,sublime.KEEP_OPEN_ON_FOCUS_LOST)
 
+	def emptying(self):
+		self.list_title = []
+		self.list_url = []
+		self.list_citeByUrl = []
+		self.list_relatedArticlesUrl = []
+		self.list_subtitle = []
+		self.list_versionURL = []
 
 	def _on_select_menue(self, idx):
 		if idx > -1:
@@ -80,71 +57,36 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 				self.showtitles()
 			elif (idx == 2):
 				citation_url = self.list_citeByUrl[self.selectedArticle]
-				self.list_title = []
-				self.list_url = []
-				self.list_citeByUrl = []
-				self.list_relatedArticlesUrl = []
-				self.list_subtitle = []
-				self.list_versionURL = []
+				self.emptying()
 
 				self.searchGoogle("https://scholar.google.com" + citation_url)
 				self.showtitles()
 			elif (idx == 3):
 				relatedArticles_url = self.list_relatedArticlesUrl[self.selectedArticle]
-				self.list_title = []
-				self.list_url = []
-				self.list_citeByUrl = []
-				self.list_relatedArticlesUrl = []
-				self.list_subtitle = []
-				self.list_versionURL = []
+				self.emptying()
 
 				self.searchGoogle("https://scholar.google.com" + relatedArticles_url)
 				self.showtitles()
 
 			elif (idx == 4):
 				versions_url = self.list_versionURL[self.selectedArticle]
-				self.list_title = []
-				self.list_url = []
-				self.list_citeByUrl = []
-				self.list_relatedArticlesUrl = []
-				self.list_subtitle = []
-				self.list_versionURL = []
+				self.emptying()
 
 				self.searchGoogle("https://scholar.google.com" + versions_url)
 				self.showtitles()
 
-
-
 			elif (idx == 5):
+				selected_title = re.sub('Cited [0-9]+: ','',self.list_title[self.selectedArticle])
+				selected_title = re.sub(':|-|–',' ',selected_title)
+				print("DBLP query: " + selected_title)
+				window = sublime.active_window()
+				window.active_view().run_command('dblp_insert_citation',{'query':selected_title, 'format': 'bibtex_crossref'})
+
+			elif (idx == 6):
 				self.showtitles()
 
-	# def _on_select_details2(self, idx3):
-	# 	if idx3 > -1:
-	# 		if (idx3 == 0):
-	# 			selected_url = self.list_url[self.selectedArticle]
-	# 			webbrowser.open_new(selected_url)
-	# 		else:
-	# 			self.showtitles()
-
-
-	# def _on_select_details(self, idx2):
-	# 	if idx2 > -1:
-	# 		titleDetail = self.list_subtitle[idx2]
-	# 		self.view.window().show_quick_panel([titleDetail,"back"],self._on_select_details2)
-
-	
-	# sparql regex
-
-
-	
-	
 	def searchGoogleTerm(self, search_term):
-		self.list_title = []
-		self.list_url = []
-		self.list_citeByUrl = []
-		self.list_relatedArticlesUrl = []
-		self.list_subtitle = []
-		self.list_versionURL = []
+		self.emptying()
 		print("Searching: " + search_term)
 		query_params = { 'q' : search_term}
 		url = "http://scholar.google.co.uk/scholar?hl=en&" + urllib.parse.urlencode(query_params) + "&btnG=&as_sdt=1%2C5&as_sdtp="
@@ -152,6 +94,7 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 
 	
 	def searchGoogle(self, url):
+		# For debuging with html file
 		# fn = os.path.join(os.path.dirname(__file__), 'ScholarExample.html')
 		# html = codecs.open(fn, 'r', 'utf-8').read()
 		html = self.getHtmlSelPhantomJS(url)
@@ -237,6 +180,44 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 		html = handler.read()
 		return html
 
+
+
+
+
+
+
+
+class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
+
+	def run(self, edit):
+		self.window = self.view.window()
+		prompt = self.window.show_input_panel("Scholar Search:", "", self.on_query, None, None)
+	def on_query(self, text):
+		if len(text) > 2:
+			print("Searching term: " + text)
+			window = sublime.active_window()
+			window.active_view().run_command('process_text_with_google_scholar',{'entry':text}) 
+		else:
+			sublime.status_message('DBLP query is too short!')
+
+
+class GoogleScholarCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		for selection in self.view.sel():
+			# if the user didn't select anything, search the currently highlighted word
+			region = None
+			if selection.empty():
+				region = self.view.word(selection)
+			else:
+				region = selection
+			text = self.view.substr(region)
+
+		window = sublime.active_window()
+		window.active_view().run_command('process_text_with_google_scholar',{'entry':text}) 
+
+
+		
+		
 
 
 

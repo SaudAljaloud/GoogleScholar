@@ -1,0 +1,1098 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tit",
+				"titleList"
+			],
+			[
+				"div",
+				"div_results"
+			],
+			[
+				"sear",
+				"search2"
+			],
+			[
+				"dia",
+				"Figures/Diagram.png"
+			],
+			[
+				"fi",
+				"First_2ndAnd3dChapters.pdf"
+			],
+			[
+				"newl",
+				"newline\tlatex-document"
+			],
+			[
+				"textq",
+				"textquotedblright\tlatex-document"
+			],
+			[
+				"cha",
+				"Chapter:RegexUsageinTheContextOfSPARQL"
+			],
+			[
+				"CB",
+				"Chapter:CBSBench"
+			],
+			[
+				"cbs",
+				"Chapter:CBSBench"
+			],
+			[
+				"bsb",
+				"Chapter:BSBMstr"
+			],
+			[
+				"ch",
+				"Sections/Chapter2"
+			],
+			[
+				"Be",
+				"Figures/CBSBench/BenchmarkDiagram3.pdf"
+			],
+			[
+				"url",
+				"url{}\turl"
+			],
+			[
+				"foot",
+				"footnote\ttex"
+			],
+			[
+				"texq",
+				"textquotedblright\tlatex-document"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"s",
+				"submit"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"mongo",
+				"MongoDB"
+			],
+			[
+				"cl",
+				"client"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					""
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (All)"
+				],
+				[
+					"Packages/Vintageous/Vintageous.sublime-build",
+					"Vintageous - Test (This File Only)"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"last_filter": "goog",
+		"selected_items":
+		[
+			[
+				"goog",
+				"GoogleScholar: Search term"
+			],
+			[
+				"exa",
+				"Example: hello World"
+			],
+			[
+				"ex",
+				"Example: hello World"
+			],
+			[
+				"sat",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"depe",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sav",
+				"File: Save All"
+			],
+			[
+				"iop",
+				"iOpener: Find File"
+			],
+			[
+				"na",
+				"File Navigator: Open"
+			],
+			[
+				"url",
+				"Open URL"
+			],
+			[
+				"open",
+				"Open URL"
+			],
+			[
+				"focus",
+				"Focus File on Sidebar"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"SublimeREPL:ter",
+				"SublimeREPL: Tower Console"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"gl",
+				"Glue - Launch"
+			],
+			[
+				"de",
+				"File: Delete"
+			],
+			[
+				"sortby",
+				"SortBy: Alphabetically"
+			],
+			[
+				"sort",
+				"SortBy: Length of lines (Descending)"
+			],
+			[
+				"findk",
+				"Keymaps: Find a keymap for..."
+			],
+			[
+				"LaTeXing: ",
+				"LaTeXing: Open PDF"
+			],
+			[
+				"Snippet: figur",
+				"Snippet: figure"
+			],
+			[
+				"Snippet: fi",
+				"Snippet: figure"
+			],
+			[
+				"key",
+				"Keymaps: Cheat Sheet"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"abo",
+				"About"
+			],
+			[
+				"",
+				"Dictionaries: Set Language"
+			],
+			[
+				"sublilog",
+				"SublimeLog: Toggle logger (on/off)"
+			],
+			[
+				"github",
+				"github: open repo"
+			],
+			[
+				"fold",
+				"Focus File on Sidebar"
+			],
+			[
+				"filed",
+				"FileDiffs: Menu"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
+				"trim",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"pacres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"sch",
+				"ScholarSublime: Search Paper"
+			],
+			[
+				"package re",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"conf",
+				"FindKeyConflicts: Single Package Conflicts"
+			],
+			[
+				"find",
+				"FindKeyConflicts: Command Search"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"navi",
+				"File Navigator: Open"
+			],
+			[
+				"trad",
+				"Build With: LaTeX - Traditional"
+			],
+			[
+				"cache",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"dblp",
+				"DBLP: insert citation cross-ref"
+			],
+			[
+				"bibte",
+				"CiteBibTeX: Extract citations in current file"
+			],
+			[
+				"bibtex",
+				"CiteBibTeX: Extract citations in current file"
+			],
+			[
+				"blind",
+				"Snippet: Blindfigure"
+			],
+			[
+				"sync",
+				"SublimePackageSync: Sync Specific"
+			],
+			[
+				"papers",
+				"sublimetext-papers: search pdfs"
+			],
+			[
+				"paper",
+				"papers: search pdfs"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"rempv",
+				"Package Control: Remove Package"
+			],
+			[
+				"google",
+				"Google Spell Check"
+			],
+			[
+				"latextools doc",
+				"LaTeXTools: View TeX package documentation"
+			],
+			[
+				"latextools",
+				"LaTeXTools: Update document analysis cache"
+			],
+			[
+				"snippet: tab",
+				"Snippet: Table"
+			],
+			[
+				"evernotsear",
+				"Evernote: Search Note"
+			],
+			[
+				"evernotse",
+				"Evernote Settings: Reconfigure Authorization"
+			],
+			[
+				"bib",
+				"Build With: LaTeX - Basic Builder"
+			],
+			[
+				"todo",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"cach",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"build",
+				"Build: Custom Quick Build"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"satsf",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"remove re",
+				"Package Control: Remove Repository"
+			],
+			[
+				"packa",
+				"Package Control: Remove Repository"
+			],
+			[
+				"open pdf",
+				"LaTeXing: Open PDF"
+			],
+			[
+				"package",
+				"Package Control: Add Repository"
+			],
+			[
+				"twe",
+				"Tweet"
+			],
+			[
+				"evernote:",
+				"Evernote: Update Evernote Note"
+			],
+			[
+				"evernote",
+				"Evernote: Search Note"
+			],
+			[
+				"everrec",
+				"Evernote Settings: Reconfigure Authorization"
+			],
+			[
+				"gitsta",
+				"git: status"
+			],
+			[
+				"latex tra",
+				"Build With: LaTeX - Traditional"
+			],
+			[
+				"latexclear",
+				"LaTeXTools: Clear document cache"
+			],
+			[
+				"latex trad",
+				"Build With: LaTeX - Traditional"
+			],
+			[
+				"snippet: figu",
+				"Snippet: Figure"
+			],
+			[
+				"snippet: late",
+				"Snippet: LaTeXing Option Prefix"
+			],
+			[
+				"git:st",
+				"git: status"
+			],
+			[
+				"git:sta",
+				"git: status"
+			],
+			[
+				"stat",
+				"git: status"
+			],
+			[
+				"git:stag",
+				"git: quick stage"
+			],
+			[
+				"git:push",
+				"git: push to existing branch"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Enumerate"
+			],
+			[
+				"set",
+				"Set Syntax: TeX"
+			],
+			[
+				":",
+				"Set Syntax: Java"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 282.0,
+		"history":
+		[
+			"view.run_command('example')",
+			"view.run_command('cn_premailer')",
+			"view.run_command('saud')",
+			"view.run_command('relatedPapers')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/sublime-googlescholar/relatedPapers.py",
+		"/Users/user/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/RelatedPapers/relatedPapers.py",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter1.tex",
+		"/Users/user/academic-keyword-occurrence/extract_occurrences.py",
+		"/Users/user/Dropbox/FinalThesis/Regex.bib",
+		"/Users/user/FinalThesisPapers/output.txt",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter2.tex",
+		"/Users/user/Dropbox/FinalThesis/Latex.sublime-project",
+		"/Users/user/Dropbox/FinalThesis/terminal.glue",
+		"/Users/user/Dropbox/FinalThesis/text.txt",
+		"/Users/user/Dropbox/FinalThesis/test.txt",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/scholar-sublime/Default (OSX).sublime-keymap",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/scholar-sublime/scholar-sublime.py",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/scholar-sublime/Default.sublime-commands",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.tex",
+		"/Users/user/Dropbox/FinalThesis/sdfsdf.tex",
+		"/Users/user/Dropbox/FinalThesis/saud.txt",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/Glue.sublime-settings",
+		"/Users/user/Library/Application Support/Sublime Text 3/Installed Packages/File Navigator.sublime-package",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.bbl",
+		"/Users/user/Dropbox/.dropbox",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter3.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter2.tex:583 Citation `springerlink",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter5.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter4.tex",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.lof",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter1.bib",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter6.tex",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/CiteBibtex.sublime-settings",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/Default (OSX).sublime-keymap",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/example.py",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.lol",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.lot",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter7.tex",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/add_word.py",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/CiteBibtex/Default.sublime-keymap",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/CiteBibtex/CiteBibtex.sublime-settings",
+		"/Users/user/Dropbox/FinalThesis/FinalThesis.aux",
+		"/Users/user/Downloads/verborgh_wadl_2016.bib",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/LaTeXing/Default (OSX).sublime-keymap",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-keymap",
+		"/Users/user/Dropbox/FinalThesis/Sections/AppendixD.tex",
+		"/Users/user/Dropbox/FinalThesis/BeforeRemovingUncited.bib",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter4_2.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/Introduction.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/LiteratureReviewAndBackground.tex",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/user/Dropbox/FinalThesis/Allbibs.text",
+		"/Users/user/Dropbox/FinalThesis/CitedPapers.text",
+		"/Users/user/Dropbox/FinalThesis/Sections/AppendixA.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/AppendixB.tex",
+		"/Users/user/Dropbox/FinalThesis/Sections/AppendixC.tex",
+		"/Users/user/Dropbox/FinalThesis/.gitignore",
+		"/Users/user/Dropbox/FinalThesis/Sections/backup.tex",
+		"/usr/local/texlive/2016/texmf-dist/tex/latex/glossaries/base/glossaries.sty",
+		"/Users/user/Dropbox/FinalThesis/Sections/Chapter4.tex.bak",
+		"/Users/user/Dropbox/FinalThesis/.sublime-project",
+		"/Users/user/Dropbox/FinalThesis/.sublime-workspace",
+		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/LaTeXWordCount.sublime-settings",
+		"/Users/user/Mooc/mooc-dashboard/README.md",
+		"/Users/user/Mooc/mooc-dashboard/webapp/README",
+		"/Users/user/Dropbox/RateMeServer/RateMe/css/twitter3.css",
+		"/Users/user/Dropbox/RateMeServer/rest.js",
+		"/Users/user/Dropbox/RateMeServer/Hello.js",
+		"/Users/user/Dropbox/RateMeServer/auoth.txt",
+		"/Users/user/Dropbox/RateMe/mystyle.css",
+		"/Users/user/Dropbox/RateMe/index.html",
+		"/Users/user/sociampubEclipse/recommendation.follow/config.properties",
+		"/Users/user/sociampubEclipse/recommendation.follow/log4j.properties",
+		"/Users/user/sociampubEclipse/EyeWire.Scapper/src/main/resources/config.properties",
+		"/Users/user/Twitter/twitter-friends/lib/tasks/twitter.rake",
+		"/Users/user/instagramcrwaler/script/config.properties",
+		"/Users/user/instagramcrwaler/config.properties",
+		"/Users/user/instagramcrwaler/configExample.properties",
+		"/Users/user/instagramcrwaler/log4j.properties",
+		"/Users/user/instagramcrwaler/log4j copy.properties",
+		"/Users/user/instagramcrwaler/src/main/resources/config.properties",
+		"/Users/user/Node.js/hellow.js",
+		"/Users/user/Node.js/file.txt",
+		"/Users/user/sociampubEclipse/EyeWire.Scapper/log4j.properties",
+		"/Users/user/javascriptTutorial/index.html",
+		"/Users/user/Downloads/British_Isles_Euler_diagram_15.svg",
+		"/Users/user/sociampubEclipse/TwitterCrowdSourcingController/src/main/resources/config.properties",
+		"/Users/user/sociampubEclipse/TwitterCrowdSourcingController/log4j.properties",
+		"/Users/user/sociampubEclipse/tweetsalalysis/src/main/java/main/ProduceFeatures.java"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/user/Dropbox/FinalThesis/Sections",
+			"",
+			"/Users/user/Dropbox/FinalThesis/Sections",
+			"",
+			"./Sections"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"GoogleScholarCommand",
+			"\\n",
+			"beautifulsoup",
+			"opener",
+			"BeautifulSoup",
+			"opener",
+			"user_agent",
+			"opener",
+			"user",
+			"user_agent",
+			"    \t\n",
+			"prud2008sparql",
+			"SUPER S",
+			"[ SUPER L ][ SUPER U ]",
+			"SUPER O",
+			"CTRL O",
+			"^(?!%).*SPARQL",
+			"^(?!%*)SPARQL",
+			"^(?!%)SPARQL",
+			"^(?!%)([^\\/\\n]*)SPARQL",
+			"^(?!\\/\\/)([^\\/\\n]*)SPARQL",
+			"SPARQL",
+			"find_all_under",
+			":",
+			"SPARQL",
+			"regex",
+			"semantic web",
+			"listing",
+			"the semantic web",
+			"DBLP:conf/semweb/McBride01",
+			"jena",
+			"springerlink:10.1007/978-3-540-76298-0_16",
+			"bizer2009berlin",
+			"Federated Repository for Querying Graph Structured Data from the Web",
+			"\\cite",
+			"MinackSN09",
+			"DBLP:conf/infocom/2010",
+			"figure:SPARQLQuery",
+			"figure:BSBMQuery6",
+			"people",
+			"reson",
+			"suoch",
+			"/",
+			"bibcite.*\\{[0-9]{4}\\}",
+			"bibcite.*\\{[0-9]\\}",
+			"bibcite.*[^0-9]",
+			"DBLP:conf/ancs/YuCDLK06",
+			"DBLP:conf/semweb/ZhangDCC12",
+			"DBLP:conf/psss/2003",
+			"xpath",
+			"Fancyhdr",
+			"table",
+			"[h]",
+			"{saud}",
+			"DBLP:conf/saud/2014",
+			"saud",
+			"An empirical study",
+			"practi",
+			"regex",
+			"super+b",
+			"regular expressions",
+			"LDBC",
+			"RegexQueriesQPS",
+			"Figure:RegexQueriesQPS",
+			"DONE",
+			"ht",
+			" B-Tree",
+			" B+Tree",
+			"B+Tree",
+			"DBLP:journals/talg/FrigoLPR12",
+			"architicture",
+			"FrigoLPR99",
+			"DBLP:conf/focs/FrigoLPR99",
+			"query",
+			"SPARQL",
+			"replace",
+			"SPARQL",
+			"regex",
+			"Regexes",
+			"regexes",
+			"invesigates",
+			"Xpath",
+			"xpath",
+			"XPath",
+			"DBLP:journals/vldb/ChanGR03",
+			"-",
+			"%!",
+			"Features Matrix Generation",
+			"cardinality",
+			"\\ref{LiteratureReviewAndBackground}",
+			"\\ref{Introduction}",
+			"\\ref{Conclusion}",
+			"\\ref{Section:Regular Expressions Indexing}",
+			"\\ref{Benchmarking Regex within SPARQL}",
+			"\\ref{CBSBench}",
+			"regex",
+			"Regex Usage in the Context of SPARQL",
+			"\\label{Regex Usage in the Context of SPARQL}",
+			"Regex Usage in the Context of SPARQL",
+			"OFFSIT",
+			"various RDF storeS",
+			"various RDF st",
+			"various RDF storeS",
+			"1,280,930",
+			"x-axic",
+			"axic",
+			"axcix",
+			"million",
+			"result",
+			"^\\w{20,100}$",
+			"^\\w{40,100}$",
+			"^\\w{10}$",
+			"^\\w{,10}$",
+			"^\\w{0,10}$",
+			"(^[A-Z]{0,10}$\\r?\\n?){0,10}",
+			"(^[A-Z]{0,10}$\\r?\\n?){0,3}",
+			"(?=^([^\\r\\n]{0,10}(\\r?|$)))[\\s\\S]{1,30}",
+			"(?=^([^\\r\\n]{0,10}(\\r?\\n|$)))[\\s\\S]{1,30}",
+			".*{10}",
+			"txt",
+			"Algorithm:RegexSPARQLQuerying",
+			"intermindate",
+			"patter\\n",
+			"RF",
+			"boolean",
+			"DBLP:journals/pvldb/AlucOD14",
+			"DBLP:journals/corr/abs-1012-2547",
+			"DBLP:journals/cacm/BoyerM77"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			" ",
+			";",
+			"DBLP:journals/ijswis/BizerS09",
+			"Regular expressions",
+			"Regular Expressions",
+			"Regex",
+			"regex",
+			"\\ref{Chapter:Conclusion}",
+			"\\ref{Chapter:RegexIndex}",
+			"\\ref{Chapter:BSBMstr}",
+			"\\ref{Chapter:CBSBench}",
+			"Regex",
+			"parse",
+			"\\n",
+			"fsdf",
+			"\\n",
+			"2.4",
+			"1.2",
+			"Regex",
+			" Regex "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.DBLP":
+	{
+		"height": 112.0
+	},
+	"output.GitSavvy":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 208.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 172.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Library/Application Support/Sublime Text 3/Packages/RelatedPapers/relatedPapers.py"
+			],
+			[
+				"ch",
+				"Sections/Chapter1.tex"
+			],
+			[
+				"ch1",
+				"Sections/Chapter1.tex"
+			],
+			[
+				"ch2",
+				"Sections/Chapter2.tex"
+			],
+			[
+				"fi",
+				"FinalThesis.tex"
+			],
+			[
+				"ch3",
+				"Sections/Chapter3.tex"
+			],
+			[
+				"regex",
+				"Regex.bib"
+			],
+			[
+				"rege",
+				"Regex.bib"
+			],
+			[
+				"th",
+				"FinalThesis.tex"
+			],
+			[
+				"fin",
+				"FinalThesis.tex"
+			],
+			[
+				"ch6",
+				"Sections/Chapter6.tex"
+			],
+			[
+				"ch5",
+				"Sections/Chapter5.tex"
+			],
+			[
+				"ch4",
+				"Sections/Chapter4.tex"
+			],
+			[
+				"bib",
+				"Regex.bib"
+			],
+			[
+				"f",
+				"FinalThesis.tex"
+			],
+			[
+				"fins",
+				"FinalThesis.lol"
+			],
+			[
+				"ch7",
+				"Sections/Chapter7.tex"
+			],
+			[
+				"the",
+				"FinalThesis.tex"
+			],
+			[
+				"reg",
+				"Regex.bib"
+			],
+			[
+				"cha",
+				"Sections/Chapter7.tex"
+			],
+			[
+				"le",
+				"Sections/LiteratureReviewAndBackground.tex"
+			],
+			[
+				"in",
+				"Sections/Introduction.tex"
+			],
+			[
+				"intr",
+				"Sections/Introduction.tex"
+			],
+			[
+				"c",
+				"Sections/Chapter5.tex"
+			],
+			[
+				"fina",
+				"FinalThesis.tex"
+			],
+			[
+				"tex",
+				"FinalThesis.tex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/FinalThesis/Latex.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 47.0,
+		"last_filter": "DBLP:journals/vldb/ChanGR03",
+		"selected_items":
+		[
+			[
+				"DBLP:journals/vldb/ChanGR03",
+				"DBLP:journals/vldb/ChanGR03"
+			]
+		],
+		"width": 845.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 196.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
