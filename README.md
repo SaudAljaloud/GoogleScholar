@@ -8,6 +8,9 @@ phantomjs: install by `pip install phantomjs`
 
 [DBLP](https://packagecontrol.io/packages/DBLP)
 
+
+This package should be used with Google Scholar access limit in mind. If you got a message with "no results", you are most probably have hit the limit!
+
 License:
 
 MIT
