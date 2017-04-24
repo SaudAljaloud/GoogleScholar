@@ -8,8 +8,15 @@ phantomjs: install by `pip install phantomjs`
 
 [DBLP](https://packagecontrol.io/packages/DBLP)
 
+I used some other libs which are already included in the lib dir: bs4 and selenium.
 
-This package should be used with Google Scholar access limit in mind. If you got a message with "no results", you are most probably have hit the limit!
+This package should be used with Google Scholar access limit in mind. If you got a message with "no results" and you think there should be some, you are most probably have hit the limit!
+
+###TODO:
+- [ ] Give a specific message to access limit, different from "No results"
+- [ ] Refactor the horrible code of using self.title etc to using a list of dictionary, this will allow to implement a better way of handling "back/forward" feature.
+- [ ] Add pagination
+
 
 License:
 
