@@ -192,13 +192,13 @@ class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		self.window = self.view.window()
 		prompt = self.window.show_input_panel("Scholar Search:", "", self.on_query, None, None)
-def on_query(self, text):
-		if len(text) > 2:
-			print("Searching term: " + text)
-			window = sublime.active_window()
-			window.active_view().run_command('process_text_with_google_scholar',{'entry':text}) 
-		else:
-			sublime.status_message('DBLP query is too short!')
+	def on_query(self, text):
+			if len(text) > 2:
+				print("Searching term: " + text)
+				window = sublime.active_window()
+				window.active_view().run_command('process_text_with_google_scholar',{'entry':text}) 
+			else:
+				sublime.status_message('DBLP query is too short!')
 
 
 class GoogleScholarCommand(sublime_plugin.TextCommand):
