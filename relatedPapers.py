@@ -20,7 +20,7 @@ from selenium import webdriver
 class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
 	def run(self,edit,entry):
 		self.searchGoogleTerm(entry)
-		self.showtitles()
+		self.showtitles ()
 
 
 	def showtitles(self):
@@ -76,7 +76,7 @@ class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
 				self.showtitles()
 
 			elif (idx == 5):
-				selected_title = re.sub('Cited [0-9]+: ','',self.list_title[self.selectedArticle])
+				selected_title = re.sub('Cited [0-9]+: ', '', self.list_title[self.selectedArticle])
 				selected_title = re.sub(':|-|–',' ',selected_title)
 				print("DBLP query: " + selected_title)
 				window = sublime.active_window()
@@ -192,7 +192,7 @@ class InsertGoogleScholarCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		self.window = self.view.window()
 		prompt = self.window.show_input_panel("Scholar Search:", "", self.on_query, None, None)
-	def on_query(self, text):
+def on_query(self, text):
 		if len(text) > 2:
 			print("Searching term: " + text)
 			window = sublime.active_window()
@@ -213,7 +213,7 @@ class GoogleScholarCommand(sublime_plugin.TextCommand):
 			text = self.view.substr(region)
 
 		window = sublime.active_window()
-		window.active_view().run_command('process_text_with_google_scholar',{'entry':text}) 
+		window.active_view().run_command('process_text_with_google_scholar',{'entry': text}) 
 
 
 		

@@ -1,0 +1,48 @@
+{
+	"SublimeLinter":
+  {
+      "@python": 3,
+      "linters":
+      {
+          "pep8":
+          {
+              "@disable": false,
+              "ignore": "E127,E128",
+              "max-line-length": 512,
+              
+          }
+      }
+  },
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.aux",
+				"*.pdf",
+				"*.sty",
+				"*.xlsx",
+				"*.log",
+				"*.lot",
+				"*.toc",
+				"*.synctex.gz",
+				"*.fls",
+				"*.out",
+				"*.lof",
+				"*.bbl",
+				"*.docx",
+				"*.blg",
+				"*.fdb_latexmk",
+				"*.loa",
+				"*.loe",
+				"*.lol"
+			],
+			"path": "."
+		}
+	],
+	    "settings":
+		    {
+		        "tab_size": 4
+		    }
+
+}
