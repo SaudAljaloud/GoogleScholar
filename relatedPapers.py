@@ -106,7 +106,7 @@ class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
 				try:
 					list_title = articlesDiv.find("h3", {"class" : "gs_rt"}).text.replace("[PDF][PDF]","[PDF]").replace("[HTML][HTML]","[HTML]")
 					try:
-						list_citeByNo = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].text or ["Cited by 0"]
+						list_citeByNo = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[2].text or ["Cited by 0"]
 						extractedNumberOfCitation = re.findall('\d+', list_citeByNo)[0] or "0"
 					except:
 						extractedNumberOfCitation = "0"
@@ -121,19 +121,19 @@ class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
 						self.list_url.append("#")
 					
 					try:
-						list_citeByUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[0].get('href')
+						list_citeByUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[2].get('href')
 						self.list_citeByUrl.append(list_citeByUrl)
 					except:
 						self.list_citeByUrl.append("#")
 					
 					try:
-						list_relatedArticlesUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[1].get('href')
+						list_relatedArticlesUrl = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[3].get('href')
 						self.list_relatedArticlesUrl.append(list_relatedArticlesUrl)
 					except:
 						self.list_relatedArticlesUrl.append("#")
 
 					try:
-						list_versionURL = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[2].get('href')
+						list_versionURL = articlesDiv.find("div", {"class" : "gs_fl"}).find_all('a')[4].get('href')
 						self.list_versionURL.append(list_versionURL)
 					except:
 						self.list_versionURL.append("#")
