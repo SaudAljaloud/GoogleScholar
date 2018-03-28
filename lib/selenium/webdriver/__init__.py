@@ -15,17 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from .firefox.webdriver import WebDriver as Firefox  # noqa
-from .firefox.firefox_profile import FirefoxProfile  # noqa
-from .chrome.webdriver import WebDriver as Chrome  # noqa
-from .chrome.options import Options as ChromeOptions  # noqa
-from .ie.webdriver import WebDriver as Ie  # noqa
-from .edge.webdriver import WebDriver as Edge  # noqa
-from .opera.webdriver import WebDriver as Opera  # noqa
-from .safari.webdriver import WebDriver as Safari  # noqa
-from .blackberry.webdriver import WebDriver as BlackBerry  # noqa
 from .phantomjs.webdriver import WebDriver as PhantomJS  # noqa
-from .android.webdriver import WebDriver as Android  # noqa
 from .remote.webdriver import WebDriver as Remote  # noqa
 from .common.desired_capabilities import DesiredCapabilities  # noqa
 from .common.action_chains import ActionChains  # noqa
