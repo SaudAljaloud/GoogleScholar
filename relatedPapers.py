@@ -157,11 +157,11 @@ class ProcessTextWithGoogleScholarCommand(sublime_plugin.TextCommand):
 	    html_source = browser.page_source
 	    return html_source
 
-	def getHtmlSelFireFox(self, url):
-	    browser = webdriver.Firefox()
-	    browser.get(url)
-	    html_source = browser.page_source
-	    return html_source
+# 	def getHtmlSelFireFox(self, url):
+# 	    browser = webdriver.Firefox()
+# 	    browser.get(url)
+# 	    html_source = browser.page_source
+# 	    return html_source
 
 	def getHtml(self, url):
 		
